@@ -37,7 +37,9 @@ export class TareasService {
     }
 
     async eliminarTarea(idTarea: number) {
+        console.log(idTarea)
         const tareaEliminada = await this.tareaRepository.delete({ idTarea })
+
         if (tareaEliminada.affected === 0) {
             return new HttpException('No se encontró la tarea', HttpStatus.NOT_FOUND)
         }

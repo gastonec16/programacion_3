@@ -18,7 +18,7 @@ export class TareasController {
 
     @Get()
     obtenerTareas() {
-        return this.tareasService.obtenerTareas
+        return this.tareasService.obtenerTareas()
     }
 
     @Patch(':idTarea')
@@ -26,7 +26,7 @@ export class TareasController {
         return this.tareasService.modificarTarea(idTarea, tarea)
     }
 
-    @Delete(':idtarea')
+    @Delete(':idTarea')
     eliminarTarea(@Param('idTarea', ParseIntPipe) idTarea: number) {
         return this.tareasService.eliminarTarea(idTarea)
     }
